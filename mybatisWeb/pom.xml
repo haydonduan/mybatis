@@ -144,6 +144,6 @@
         <!-- log end -->
     </dependencies>
     <build>
-        <finalName>springmvc</finalName>
+        <finalName>mybatis_spring</finalName>
     </build>
 </project>
