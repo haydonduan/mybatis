@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+        <!--这块等于dao接口的实现  namespace必须和接口的类路径一样-->  
+    <mapper namespace="com.testmaven.app.testmaven.UserMapper">  
+        <!-- findById必须和接口中的方法名一样  返回一个User  就是刚才的别名  如果不弄别名要连类路径一起写 麻烦-->
+          
+        <sql id="selectThings">id,name</sql>
+        
+        <select id="findById" parameterType="map" resultType="User">  
+            select * from user where id=#{id}
+        </select>  
+        
+        <insert id="insertUser" parameterType="User">
+            insert into User (name) values (#{name})
+        </insert>
+        
+        <update id="updateUser" parameterType="User">
+            update User set name=#{name} where id=#{id}
+        </update>
+        
+        <delete id="deleteUser" parameterType="User">
+            delete from user where id=#{id}
+        </delete>
+        
+        
+        <cache readOnly="true" size="512" flushInterval="60000" eviction="FIFO"/> 
+    </mapper>  
