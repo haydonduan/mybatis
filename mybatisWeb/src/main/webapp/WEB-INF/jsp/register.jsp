@@ -7,10 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <form action="${pageContext.request.contextPath}/views/submit" method="post">
+    <form action="${pageContext.request.contextPath}/views/registerdo" method="post">
          name：<input name="name" type="text"><br>
          psw:<input name="password" type="password"><br>
-         <input type="submit" value="submit"><input type="button" value="register" onclick="javascript:window.location='${pageContext.request.contextPath}/views/register'">
+         <input type="submit" value="submit">
     </form>
 </body>
 </html>

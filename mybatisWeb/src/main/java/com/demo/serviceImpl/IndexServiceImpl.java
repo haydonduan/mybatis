@@ -16,4 +16,12 @@ public class IndexServiceImpl implements IndexService{
         return user;
     }
 
+    public int addUser(User user) {
+        return indexMapper.addUser(user);
+    }
+
+    public User findByName(String name) {
+        return indexMapper.findByName(name);
+    }
+
 }

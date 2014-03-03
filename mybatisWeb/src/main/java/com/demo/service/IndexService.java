@@ -4,4 +4,8 @@ import com.demo.domain.User;
 
 public interface IndexService {
     User findUserById(Long id);
+    
+    int addUser(User user);
+    
+    User findByName(String name);
 }

@@ -8,4 +8,12 @@
         <select id="findById" parameterType="map" resultType="DemoUser">  
             select * from user where id=#{id}
         </select> 
+        
+        <insert id="addUser" parameterType="DemoUser">
+            insert into user(name,password) values (#{name},#{password})
+        </insert>
+        
+        <select id="findByName" parameterType="map" resultType="DemoUser">  
+            select * from user where name=#{name}
+        </select>
 </mapper>
