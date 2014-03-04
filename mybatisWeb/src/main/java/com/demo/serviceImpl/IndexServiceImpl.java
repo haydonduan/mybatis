@@ -13,8 +13,8 @@ public class IndexServiceImpl implements IndexService{
     private IndexMapper indexMapper;
     
     
-    public User findUserById(Long id) {
-        User user = indexMapper.findById(id);
+    public User findUserById(User user1) {
+        User user = indexMapper.findById(user1);
         return user;
     }
 

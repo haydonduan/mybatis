@@ -20,7 +20,10 @@ public class IndexController {
     @RequestMapping("index")
     public ModelAndView index(){
         ModelAndView mav = new ModelAndView("index");
-        mav.addObject("user",indexService.findUserById(2L));
+        User user = new User();
+        //user.setId(1L);
+        User user1 = indexService.findUserById(user);
+        mav.addObject("user",user1);
         return mav;
     }
     

@@ -7,9 +7,18 @@
 </cache>
 <!-- 一些简单的映射 -->
         <sql id="selectThings">id,name</sql>
-        
-        <select id="findById" parameterType="map" resultType="DemoUser">  
-            select * from user where id=#{id}
+        <resultMap type="DemoUser" id="firstResultMap">
+            <id column="id" property="id" javaType="Long"/>
+            <result column="name" property="name" javaType="String"/>
+        </resultMap>
+        <!-- 动态SQL语句 -->
+        <select id="findById" parameterType="DemoUser" resultType="DemoUser" resultMap="firstResultMap">
+	        <if test="id != null"> 
+	            select <include refid="selectThings"/> from user where id=#{id}
+	         </if>
+	        <if test="id == null">
+	            select id from user
+	        </if> 
         </select> 
         
         <insert id="addUser" parameterType="DemoUser">
@@ -68,4 +77,6 @@
         <select id="findBoxAndUserByUserId" resultMap="userResultMap3" parameterType="User2">
              select u.name,c.cup_name,b.box_name from user u left join box b on b.user_id = u.id left join cup c on c.id = u.cup <include refid="wherePath"/>
         </select>
+      
+      
 </mapper>

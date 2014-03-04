@@ -4,7 +4,7 @@ import com.demo.domain.User;
 import com.demo.domain.User2;
 
 public interface IndexService {
-    User findUserById(Long id);
+    User findUserById(User user);
     
     int addUser(User user);
     

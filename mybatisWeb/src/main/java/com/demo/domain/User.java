@@ -3,12 +3,19 @@ package com.demo.domain;
 public class User{  
     private Long id;
     private String name;  
-    private Integer age;  
-    private String nickName;
     private String password;
-    public User (Long id,String name){
+    private Long _id;
+    
+    public Long get_id() {
+        return _id;
+    }
+    public void set_id(Long _id) {
+        this._id = _id;
+    }
+    public User (Long id,String name,String password){
         this.id = id;
         this.name = name;
+        this.password = password;
     }
     public User (){}
     
@@ -18,12 +25,6 @@ public class User{
     }
     public void setPassword(String password) {
         this.password = password;
-    }
-    public String getNickName() {
-        return nickName;
-    }
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
     }
     public Long getId() {
         return id;
@@ -36,11 +37,5 @@ public class User{
     }  
     public void setName(String name) {  
         this.name = name;  
-    }  
-    public Integer getAge() {  
-        return age;  
-    }  
-    public void setAge(Integer age) {  
-        this.age = age;  
     }  
 } 
