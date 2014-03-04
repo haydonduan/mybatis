@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.demo.domain.User;
+import com.demo.domain.User2;
 import com.demo.service.IndexService;
 
 @Controller
@@ -51,7 +52,14 @@ public class IndexController {
         }else{
             mav.setViewName("fail");
         }
-       
+        return mav;
+    }
+    
+    @RequestMapping("cupuser")
+    public ModelAndView findByCupAndUser(){
+        ModelAndView mav = new ModelAndView("association");
+        User2 usernew = indexService.findCupAndUserByUserId(new User2(1L));
+        mav.addObject("user", usernew);
         return mav;
     }
 }

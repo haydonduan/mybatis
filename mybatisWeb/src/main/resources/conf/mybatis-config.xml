@@ -5,6 +5,13 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration>
 	<!-- 命名空间 -->
 	<typeAliases>
-		<typeAlias alias="DemoUser" type="com.demo.domain.User" />
+		<typeAlias alias="DemoUser" type="com.demo.domain.User"/>
+		<typeAlias alias="User2" type="com.demo.domain.User2"/>
+		<typeAlias alias="cup" type="com.demo.domain.Cup"/>
+		<typeAlias alias="box" type="com.demo.domain.Box"/>
 	</typeAliases>
+	<mappers>
+	   <mapper resource="/mapper/IndexMapper.xml"/>
+	   <mapper resource="/mapper/CupMapper.xml"/>
+	</mappers>
 </configuration>
